@@ -30,7 +30,7 @@ jobs:
             task: fuzz
           - type: DTrace
             task: dtrace
-            container: h2oserver/h2o-ci:ubuntu2004
+            container: h2oserver/h2o-ci:ubuntu2004-canary
 
     steps:
     - uses: actions/checkout@v2
