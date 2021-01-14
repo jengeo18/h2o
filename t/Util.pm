@@ -632,6 +632,8 @@ sub spawn_h2olog {
         if (waitpid($tracer_pid, WNOHANG) == 0) {
             diag "killing h2olog ($tracer_pid) with SIGTERM";
             kill "TERM", $tracer_pid;
+        } else {
+            diag "h2olog exited successfully";
         }
     });
 
