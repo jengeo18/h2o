@@ -90,3 +90,5 @@ diag "shutting down ...";
 undef $server;
 
 done_testing();
+print STDERR "# after done_testing()\n";
+END { print STDERR "# in END block\n"; }
