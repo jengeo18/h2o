@@ -15,19 +15,8 @@ jobs:
       fail-fast: false
       matrix:
         type:
-          - default
-          - OpenSSL 1.1.0
-          - OpenSSL 1.1.1
           - DTrace
         include:
-          - type: default
-            task: ALL
-          - type: OpenSSL 1.1.0
-            task: ossl1.1.0
-          - type: OpenSSL 1.1.1
-            task: ossl1.1.1
-          - type: Fuzz
-            task: fuzz
           - type: DTrace
             task: dtrace
             container: h2oserver/h2o-ci:ubuntu2004-canary
