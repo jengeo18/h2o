@@ -27,6 +27,7 @@ jobs:
         submodules: recursive
 
     - name: Run with Docker
+      timeout-minutes: 40
       shell: 'script -q -e -c "bash -xe {0}"'
       run: |
         chmod -R ugo+w .
