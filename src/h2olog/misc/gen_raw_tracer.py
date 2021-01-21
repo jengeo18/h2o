@@ -401,6 +401,8 @@ int trace_sched_process_exit(struct tracepoint__sched__sched_process_exit *ctx) 
   const struct task_struct *task = (const struct task_struct*)bpf_get_current_task();
   pid_t h2o_pid = task->tgid;
   pid_t h2o_tid = task->pid;
+  bpf_trace_printk("XXX task->tgid=%%d task->pid=%%d H2OLOG_H2O_PID=%%d\n", task->tgid, task->pid, H2OLOG_H2O_PID);
+  bpf_trace_printk("XXX comm=%%s\n", task->comm);
   if (!(h2o_pid == H2OLOG_H2O_PID && h2o_tid == H2OLOG_H2O_PID)) {
     return 0;
   }
