@@ -26,6 +26,7 @@ ossl1.1.1:
 		CMAKE_ARGS='-DOPENSSL_ROOT_DIR=/opt/openssl-1.1.1'
 
 dtrace:
+	ls -l /usr/src /usr/src/*
 	rm -rf src/h2olog/generated_raw_tracer.cc # make sure it's up-todate
 	docker run $(DOCKER_RUN_OPTS) $(CONTAINER_NAME) env DTRACE_TESTS=1 make -f $(SRC_DIR)/misc/docker-ci/check.mk _check
 
